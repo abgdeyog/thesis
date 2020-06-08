@@ -30,7 +30,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 from keras.layers.advanced_activations import ELU
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"
-vgg_16_weights = 'src/weights.h5'
+vgg_16_weights = 'src/cnn_weights'
 num_features = 4096
 
 
@@ -115,6 +115,6 @@ model, graph = init_cnn()
 # loading saved classifier
 final_classifier = load_model("src/classifier_100")
 graph2 = get_default_graph()
-mean_file = 'src/flow_mean.mat'
+mean_file = 'src/mean_file'
 d = sio.loadmat(mean_file)
 flow_mean = d['image_mean']
